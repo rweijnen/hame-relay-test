@@ -5,6 +5,15 @@ This project helps you integrate your Marstek storage systems with both the offi
 1. Using the official app with a locally configured storage system
 2. Using home automation with a storage system configured for the official Hame cloud
 
+## ✨ v154+ Firmware Compatibility
+
+**New in this version**: Full compatibility with Marstek firmware v154 and newer, which introduced a new MQTT topic format.
+
+- **Automatic Detection**: The relay automatically detects whether your device uses the legacy format (XID=0) or new format (XID=1)
+- **Dual Format Support**: Works seamlessly with mixed environments containing both old and new firmware devices
+- **No Configuration Required**: Topic format conversion happens transparently
+- **Backward Compatible**: Existing configurations continue to work unchanged
+
 ## How It Works
 
 Marstek storage systems can be configured to use either:
@@ -120,7 +129,7 @@ docker run -d \
   --name hame-relay \
   --restart unless-stopped \
   -v "$(pwd)/config:/app/config" \
-  ghcr.io/tomquist/hame-relay:latest
+  ghcr.io/rweijnen/hame-relay:latest
 ```
 Set `LOG_LEVEL` to control verbosity, e.g. `-e LOG_LEVEL=debug`.
 
@@ -141,7 +150,7 @@ version: '3.8'
 
 services:
   mqtt-forwarder:
-    image: ghcr.io/tomquist/hame-relay:latest
+    image: ghcr.io/rweijnen/hame-relay:latest
     container_name: hame-relay
     restart: unless-stopped
     volumes:
