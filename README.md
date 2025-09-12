@@ -129,7 +129,7 @@ docker run -d \
   --name hame-relay \
   --restart unless-stopped \
   -v "$(pwd)/config:/app/config" \
-  ghcr.io/rweijnen/hame-relay:latest
+  ghcr.io/rweijnen/hame-relay-test:latest
 ```
 Set `LOG_LEVEL` to control verbosity, e.g. `-e LOG_LEVEL=debug`.
 
@@ -150,7 +150,7 @@ version: '3.8'
 
 services:
   mqtt-forwarder:
-    image: ghcr.io/rweijnen/hame-relay:latest
+    image: ghcr.io/rweijnen/hame-relay-test:latest
     container_name: hame-relay
     restart: unless-stopped
     volumes:
@@ -171,7 +171,7 @@ docker compose up -d
 
 1. Add this repository to your Home Assistant add-on store:
    ```
-   https://github.com/tomquist/hame-relay
+   https://github.com/rweijnen/hame-relay-test
    ```
 
 2. Install the "Hame Relay" add-on
