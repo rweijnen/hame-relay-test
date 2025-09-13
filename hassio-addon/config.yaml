@@ -3,7 +3,7 @@ version: "1.3.0-beta"
 slug: "hame_relay_test"
 description: "TEST VERSION: Hame Relay with v154+ firmware XID dual-format support"
 url: "https://github.com/rweijnen/hame-relay-test"
-image: "ghcr.io/rweijnen/hame-relay-test-addon:latest"
+image: "ghcr.io/rweijnen/hame-relay-test-addon"
 arch:
   - armv7
   - aarch64
